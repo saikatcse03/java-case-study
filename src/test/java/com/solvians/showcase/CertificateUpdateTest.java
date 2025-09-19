@@ -32,4 +32,18 @@ public class CertificateUpdateTest {
         assertNotEquals(certificate1, certificate2);
         //exact value check logic can be done with additional technique in testing
     }
+
+    @Test
+    void whenCertificateUpdateIsCalled100Times_ReturnCallableFunctionAndValue() throws Exception {
+        Callable<String> callable = certificateUpdate.getCertificateUpdate();
+        int count = 0;
+        while(count < 100) {
+
+            String certificate = callable.call();
+            assertEquals(6, certificate.split(",").length);
+            assertEquals(6, certificate.split(",").length);
+            count++;
+        }
+        //exact value check logic can be done with additional technique in testing
+    }
 }
