@@ -16,7 +16,6 @@ public class CertificateUpdateTest {
 
         String certificate = callable.call();
 
-        assertNotNull(0, certificate);
         assertEquals(6, certificate.split(",").length);
     }
 
@@ -27,9 +26,7 @@ public class CertificateUpdateTest {
         String certificate1 = callable.call();
         String certificate2 = callable.call();
 
-        assertNotNull(0, certificate1);
         assertEquals(6, certificate1.split(",").length);
-        assertNotNull(0, certificate2);
         assertEquals(6, certificate2.split(",").length);
 
         assertNotEquals(certificate1, certificate2);
